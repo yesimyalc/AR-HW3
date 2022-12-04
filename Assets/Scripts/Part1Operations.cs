@@ -13,16 +13,16 @@ public class Part1Operations : MonoBehaviour
     public double[,] hmMatrix;
 
     public double[,] scenePoints= new double[5,2] { {100,0}, {0,100}, {200,200}, {400,300}, {300,500} };
-    public double[,] im1Points= new double[5,2] { {681,651}, {451,885}, {921,1117}, {1383,1347}, {1161,1810} };
-    public double[,] im2Points= new double[5,2] { {477,648}, {255,890}, {718,1115}, {1429,1344}, {959,1824} };
-    public double[,] im3Points= new double[5,2] { {710,598}, {489,790}, {944,1013}, {1386,1227}, {1194,1656} };
+    public double[,] im1Points= new double[5,2] { {2071,876}, {1836,648}, {1607,1120}, {1384,1576}, {922,1351} };
+    public double[,] im2Points= new double[5,2] { {1923,824}, {1667,589}, {1427,1093}, {1192,1583}, {721,1352} };
+    public double[,] im3Points= new double[5,2] { {1962,834}, {1746,642}, {1578,1027}, {1398,1438}, {951,1223} };
     public double[,] hmMatrix1;
     public double[,] hmMatrix2;
     public double[,] hmMatrix3;
-    public double[,] scenePointsTest= new double[3,2] { {0,0}, {100,100}, {0,300} };
-    public double[,] im1PointsTest= new double[3,2] { {445,649}, {687,885}, {459,1351} };
-    public double[,] im2PointsTest= new double[3,2] { {251,655}, {483,885}, {266,1360} };
-    public double[,] im3PointsTest= new double[3,2] { {487,584}, {716,800}, {493,1218} };
+    public double[,] scenePointsTest= new double[3,2] { {0,0}, {100,100}, {300,0} };
+    public double[,] im1PointsTest= new double[3,2] { {2071,642}, {1838,881}, {2072,1342} };
+    public double[,] im2PointsTest= new double[3,2] { {1923,571}, {1670,837}, {1927,1325} };
+    public double[,] im3PointsTest= new double[3,2] { {1944,645}, {1764,832}, {2002,1227} };
 
     // Start is called before the first frame update
     void Start()

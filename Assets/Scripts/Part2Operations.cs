@@ -16,10 +16,11 @@ public class Part2Operations : MonoBehaviour
 
     private int currentPicture=0;
     private double[,] refCenter=new double[1,3] { {2313,886,1} };
-    private double refScale=400;
+    private double refScaleXZ=600;
+    private double refScaleY;
     private double refZ=-20;
     private Vector3 refTransformPosition;
-    private Vector3 refRotation=new Vector3(-42.014f, -37.503f, 39.194f);
+    private Vector3 refRotation=new Vector3(-46.897f, -43.527f, 37.756f);
 
     private double[,] refScenePoints=new double[5,2] { {2380,812}, {2115,1309}, {989,832}, {2172,831}, {1739,511} };
     private double[,] im1Points=new double[5,2] { {1903,674}, {2109,928}, {1294,919}, {1835,736}, {1530,772} };
@@ -46,10 +47,10 @@ public class Part2Operations : MonoBehaviour
     {
         backButton.SetActive(false);
         refTransformPosition=new Vector3((float)refCenter[0,0], (float)refCenter[0,1], (float)refZ);
-        /*int pixelOfCable=754;
-        int lengthOfCable=12;
-        int lengthOfBox=15*754/12;
-        int scaleX=5000*lengthOfBox/3264;*/
+        int pixelOfCable=754;
+        int lengthOfCable=15;
+        int lengthOfBox=lengthOfCable*pixelOfCable/15;
+        refScaleY=5000*lengthOfBox/3264;
     }
 
     public void goBack()
@@ -94,7 +95,7 @@ public class Part2Operations : MonoBehaviour
         if(imageNo==0)
         {
             teapot.transform.localPosition=refTransformPosition;
-            teapot.transform.localScale=new Vector3((float)refScale, (float)refScale, (float)refScale);
+            teapot.transform.localScale=new Vector3((float)refScaleXZ, (float)refScaleY, (float)refScaleXZ);
             teapot.transform.rotation=Quaternion.Euler(refRotation.x, refRotation.y, refRotation.z);
         }
         else if(imageNo==1)
@@ -153,7 +154,7 @@ public class Part2Operations : MonoBehaviour
 
         //Apply
         teapot.transform.localPosition=new Vector3((float)imCenter[0,0], (float)imCenter[1,0], (float)refZ);
-        teapot.transform.localScale=new Vector3((float)(refScale*scaling), (float)(refScale*scaling), (float)(refScale*scaling));
+        teapot.transform.localScale=new Vector3((float)(refScaleXZ*scaling), (float)(refScaleY*scaling), (float)(refScaleXZ*scaling));
         teapot.transform.rotation=Quaternion.Euler(refRotation.x, refRotation.y, refRotation.z);
         teapot.transform.Rotate(0f, angle, 0f, Space.Self);
     }
